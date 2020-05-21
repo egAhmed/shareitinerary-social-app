@@ -1,0 +1,32 @@
+.navbar {
+  height: $navbar-height;
+
+  &__inner {
+    position: fixed;
+    width: 100%;
+    height: $navbar-height;
+    background-color: $secondary-color;
+    z-index: 100;
+  }
+
+  & .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  & .feed-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-bottom: $border-separation;
+  }
+
+  &__brand {
+    display: flex;
+    height: 45px;
+    img {
+      height: 100%;
+    }
+  }
+}

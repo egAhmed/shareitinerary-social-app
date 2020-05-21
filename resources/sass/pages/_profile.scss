@@ -1,0 +1,62 @@
+.profile-page {
+  width: $content-width;
+  &__header {
+  }
+
+  &__main {
+    display: flex;
+    width: 100%;
+    padding: 40px 20px 20px 20px;
+    align-items: flex-start;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
+  &__text {
+    display: block;
+    font-family: $font-regular;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 15px;
+    color: $secondary-color-text-light;
+    line-height: 1.4;
+  }
+
+  &__others {
+    margin-top: 10px;
+    font-weight: 500;
+    font-family: $font-regular;
+  }
+
+  &__counter {
+    display: flex;
+    list-style: none;
+    padding: 14px 0 20px 0;
+
+    li {
+      display: flex;
+      font-weight: 600;
+      font-size: 18px;
+      align-items: center;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+
+    div {
+      margin-right: 5px;
+      color: rgba($secondary-color-text, 0.8);
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: $secondary-color-text-light;
+    }
+  }
+}

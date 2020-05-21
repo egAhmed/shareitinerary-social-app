@@ -1,0 +1,39 @@
+.heading {
+  &--primary {
+    font-family: $font-heading;
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  &--post &__name {
+    font-size: 15px;
+  }
+
+  &--post &__username {
+    font-size: 14px;
+  }
+
+  &--large &__name {
+    font-size: 25px;
+  }
+
+  &--large &__username {
+    font-size: 18px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    color: $secondary-color-text;
+  }
+
+  &__username {
+    font-family: $font-regular;
+    color: $secondary-color-text-light;
+  }
+}

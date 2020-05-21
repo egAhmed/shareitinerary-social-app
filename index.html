@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shareitinerary | Social</title>
+    <link rel="stylesheet" href="./resources/css/main.css" />
+    <link rel="stylesheet" href="./resources/css/materialize-grid.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar__inner">
+        <div class="container">
+          <div class="sidebar-container">
+            <a href="/" class="navbar__brand">
+              <img
+                src="./resources/images/shareitinerary_logo.png"
+                alt="Shareitinerary logo"
+            /></a>
+          </div>
+          <div class="feed-container">
+            <div class="input--primary">
+              <input
+                class="input input--primary__field"
+                id="field1"
+                placeholder="Search"
+              />
+              <span class="input--primary__icon icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  fill="#5B5B5B"
+                >
+                  <path
+                    d="M21,3C11.6,3,4,10.6,4,20s7.6,17,17,17s17-7.6,17-17S30.4,3,21,3z M21,33c-7.2,0-13-5.8-13-13c0-7.2,5.8-13,13-13c7.2,0,13,5.8,13,13C34,27.2,28.2,33,21,33z"
+                    fill="#5B5B5B"
+                  />
+                  <path
+                    fill="none"
+                    stroke="#5B5B5B"
+                    stroke-width="6"
+                    d="M31.2 31.2L44.5 44.5"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <button class="btn btn--icon ml-auto">
+              <span class="btn--icon__count"></span>
+              <p class="btn--icon__icon icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#5B5B5B"
+                >
+                  <path
+                    d="M18 16v-6a5.996 5.996 0 00-4.5-5.803V3.5a1.5 1.5 0 00-3 0v.696A5.997 5.997 0 006 10v6l-2 2v1h16v-1l-2-2zm-8 4a2 2 0 004 0h-4z"
+                  />
+                </svg>
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="page-container">
+        <div class="sidebar">
+          <div class="sidebar__inner">
+            <div class="sidebar__profile">
+              <div class="profile-image profile-image--small">
+                <div class="profile-image__main">
+                  <img
+                    src="./resources/images/faces/face-3.png"
+                    alt="user profile picture"
+                    draggable="false"
+                  />
+                </div>
+              </div>
+
+              <div class="profile">
+                <h1 class="profile__name">
+                  Christopher Lugod
+                </h1>
+
+                <div class="profile__username">
+                  @_christravel
+                </div>
+              </div>
+            </div>
+
+            <!-- <ul class="sidebar__count">
+                        <li>
+                            <div>50</div>
+                            <p>Post</p>
+                        </li>
+                        <li>
+                            <div>506</div>
+                            <p>Followers</p>
+                        </li>
+                        <li>
+                            <div>1056</div>
+                            <p>Following</p>
+                        </li>
+                    </ul> -->
+
+            <ul class="sidebar__link">
+              <li class="sidebar__link-item sidebar--active">
+                <a href="/">
+                  <div class="sidebar__link-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 30 30"
+                      fill="#5B5B5B"
+                    >
+                      <path
+                        d="M10.567 12.576l.67-.67-.778-4.936 2.246-2.246a1.01 1.01 0 10-1.429-1.429L9.03 5.541l-4.936-.779-.67.67L7.061 7.51 5.327 9.244l-1.811-.453L3 9.307 6.693 13l.516-.516-.453-1.811L8.489 8.94l2.078 3.636z"
+                      />
+                      <path
+                        d="M15 3c-.062 0-.121.008-.182.009.228.647.228 1.353.001 2 .06-.001.12-.009.181-.009 2.105 0 4.057.657 5.67 1.772L20 7v1h-1l-1 1v2l2-1 3 1-1 2-2-1h-2l-2 2v2l2 2h2l1 2-2.105 4.21a9.953 9.953 0 01-4.982.728l-1.948-1.902L12 19l-3-3H6l-.758 1.163A10.02 10.02 0 015 15c0-.278.019-.551.042-.823l-1.755-1.755A11.904 11.904 0 003 15c0 6.617 5.383 12 12 12s12-5.383 12-12S21.617 3 15 3z"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="sidebar__link-title">
+                    Feed
+                  </div>
+                </a>
+              </li>
+              <li class="sidebar__link-item">
+                <a href="/">
+                  <div class="sidebar__link-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 32 32"
+                      fill="#5B5B5B"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-width="2"
+                        d="M16 5a11 11 0 100 22 11 11 0 100-22z"
+                      />
+                      <path
+                        d="M14.143 14.143L9.5 22.5l8.357-4.643L22.5 9.5l-8.357 4.643zM16 17.5a1.5 1.5 0 11.001-3.001A1.5 1.5 0 0116 17.5z"
+                      />
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-width="2"
+                        d="M16 7V5m0 22v-2m9-9h2M5 16h2"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="sidebar__link-title">
+                    Explore
+                  </div>
+                </a>
+              </li>
+              <li class="sidebar__link-item">
+                <a href="/">
+                  <div class="sidebar__link-icon icon--profile">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 26 26"
+                      fill="#5B5B5B"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 22.3v-1.1c0-2 2.9-3.9 6.3-4.5 0 0 1-1.1.8-2.1C9 13.4 8.7 12 8.7 12c-.2-.1-.4-.2-.6-.5-.3-.5-.7-1.6-.6-2.3.1-.8.3-.5.3-.7-.7-1.7-.4-3.8.5-5.4C10 0 13.8.9 14.4 2.1c3.6-.7 3.4 4.9 2.9 6.4 0 0 .3.1.3 1.4-.1 1.4-1.2 2.3-1.2 2.3 0 .4-.5 1.5-1.2 2.5-.6 1.3.7 2.1.7 2.1 3.4.6 6.2 2.5 6.2 4.5v1.1c0 1.3-4.9 2.7-9.5 2.7C7.9 25 3 24.5 3 22.3z"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="sidebar__link-title">
+                    Profile
+                  </div>
+                </a>
+              </li>
+              <li class="sidebar__link-item">
+                <a href="/">
+                  <div class="sidebar__link-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 32 32"
+                      fill="#5B5B5B"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-width="2"
+                        d="M16 12a4 4 0 100 8 4 4 0 100-8z"
+                      />
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-width="2"
+                        d="M25 16c0-.677-.081-1.335-.223-1.97l2.615-2.298-2-3.464-3.304 1.118a8.984 8.984 0 00-3.407-1.979L18 4h-4l-.681 3.406a8.976 8.976 0 00-3.407 1.979L6.608 8.268l-2 3.464 2.615 2.298C7.081 14.665 7 15.323 7 16s.081 1.335.223 1.97l-2.615 2.298 2 3.464 3.304-1.118a8.984 8.984 0 003.407 1.979L14 28h4l.681-3.406a8.976 8.976 0 003.407-1.979l3.304 1.118 2-3.464-2.615-2.298A9.028 9.028 0 0025 16z"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="sidebar__link-title">
+                    Settings
+                  </div>
+                </a>
+              </li>
+
+              <li class="sidebar__link-item">
+                <a href="/">
+                  <div class="sidebar__link-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 30 30"
+                      fill="#5B5B5B"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#5B5B5B"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 15h13m-4-4l4 4-4 4M21.278 6A10.863 10.863 0 0015 4C8.925 4 4 8.925 4 15s4.925 11 11 11c2.342 0 4.499-.748 6.278-2"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="sidebar__link-title">
+                    Logout
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <main class="feed-container feed-container--main">
+          <section class="section section--stories">
+            <div class="heading--primary mb-1">
+              Stories
+            </div>
+
+            <ul class="list list--stories">
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-6.png"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @rick-grimes
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-4.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @christina
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-6.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @gallie
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-2.png"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @airandom
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-5.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @travelerme
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-8.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @johndoe
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/profile/rick-grimes" class="card--stories">
+                  <div class="profile-image profile-image--medium">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-3.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--stories__username">
+                    @oldmantraveler
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="section section--feeds">
+            <div class="heading--primary mb-1 mt-1">Feeds</div>
+
+            <ul class="list list--feeds">
+              <li>
+                <div class="card--feed">
+                  <div class="card--feed__header">
+                    <div class="card--feed__user">
+                      <div class="profile-image profile-image--xsmall">
+                        <div class="profile-image__main">
+                          <img
+                            src="./resources/images/faces/face-3.png"
+                            alt="user profile picture"
+                            draggable="false"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="profile profile--post">
+                        <h1 class="profile__name">
+                          Christopher Lugod
+                        </h1>
+
+                        <div class="profile__username">
+                          @_christravel
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card--feed__place ml-auto">
+                      <p>
+                        Mount Caroline, Western Australia, Australia
+                      </p>
+                      <div class="icon icon--place">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0C8.101563 0 5 3.101563 5 7C5 13 12 24 12 24C12 24 19 12.898438 19 7C19 3.101563 15.898438 0 12 0 Z M 12 9C10.898438 9 10 8.101563 10 7C10 5.898438 10.898438 5 12 5C13.101563 5 14 5.898438 14 7C14 8.101563 13.101563 9 12 9Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card--feed__main">
+                    <img
+                      src="./resources/images/travel-pic/mount-caroline.jpg"
+                      alt="Post Image"
+                      draggable="false"
+                    />
+                  </div>
+                  <div class="card--feed__footer">
+                    <p class="card--feed__caption">
+                      Here in Colorado, Wyoming, Montana and Idaho, the Great
+                      Plains of the American West collide with the drama-filled
+                      Rockies, one of...
+                    </p>
+
+                    <div class="card--feed__count-buttons">
+                      <button class="btn btn--secondary" title="Comment">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 50 50"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M9 46a1 1 0 01-.515-1.857c2.139-1.283 2.994-3.248 2.654-6.143H7c-2.757 0-5-2.243-5-5V9c0-2.757 2.243-5 5-5h36c2.757 0 5 2.243 5 5v24c0 2.757-2.243 5-5 5H20.684C17.708 45.205 11.56 46 9 46z"
+                            />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          500
+                        </p>
+                      </button>
+                      <button class="btn btn--secondary" title="Shares">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 50 50"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M36.3 40H13c-3.9 0-7-3.1-7-7V19H1l8-9 8 9h-5v14c0 .6.4 1 1 1h18l5.3 6zm7.7-9V17c0-3.9-3.1-7-7-7H13.7l5.3 6h18c.6 0 1 .4 1 1v14h-5l8 9 8-9h-5z"
+                            />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          1.5k
+                        </p>
+                      </button>
+                      <button class="btn btn--secondary" title="Likes">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 30 30"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M20.455 4C17 4 15 7 15 7v17l1.204 1.597C19.579 22.951 27 16.886 27 10.545A6.545 6.545 0 0020.455 4zM9.545 4C13 4 15 7 15 7v17l-1.204 1.597C10.421 22.951 3 16.886 3 10.545A6.545 6.545 0 019.545 4z"
+                            />
+                            <path d="M15 22a2 2 0 100 4 2 2 0 100-4z" />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          1.6k
+                        </p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card--feed">
+                  <div class="card--feed__header">
+                    <div class="card--feed__user">
+                      <div class="profile-image profile-image--xsmall">
+                        <div class="profile-image__main">
+                          <img
+                            src="./resources/images/faces/face-3.png"
+                            alt="user profile picture"
+                            draggable="false"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="profile profile--post">
+                        <h1 class="profile__name">
+                          Christopher Lugod
+                        </h1>
+
+                        <div class="profile__username">
+                          @_christravel
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card--feed__place ml-auto">
+                      <p>
+                        Mount Caroline, Western Australia, Australia
+                      </p>
+                      <div class="icon icon--place">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 0C8.101563 0 5 3.101563 5 7C5 13 12 24 12 24C12 24 19 12.898438 19 7C19 3.101563 15.898438 0 12 0 Z M 12 9C10.898438 9 10 8.101563 10 7C10 5.898438 10.898438 5 12 5C13.101563 5 14 5.898438 14 7C14 8.101563 13.101563 9 12 9Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card--feed__main">
+                    <img
+                      src="./resources/images/travel-pic/mount-caroline.jpg"
+                      alt="Post Image"
+                      draggable="false"
+                    />
+                  </div>
+                  <div class="card--feed__footer">
+                    <p class="card--feed__caption">
+                      Here in Colorado, Wyoming, Montana and Idaho, the Great
+                      Plains of the American West collide with the drama-filled
+                      Rockies, one of...
+                    </p>
+
+                    <div class="card--feed__count-buttons">
+                      <button class="btn btn--secondary" title="Comment">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 50 50"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M9 46a1 1 0 01-.515-1.857c2.139-1.283 2.994-3.248 2.654-6.143H7c-2.757 0-5-2.243-5-5V9c0-2.757 2.243-5 5-5h36c2.757 0 5 2.243 5 5v24c0 2.757-2.243 5-5 5H20.684C17.708 45.205 11.56 46 9 46z"
+                            />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          500
+                        </p>
+                      </button>
+                      <button class="btn btn--secondary" title="Shares">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 50 50"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M36.3 40H13c-3.9 0-7-3.1-7-7V19H1l8-9 8 9h-5v14c0 .6.4 1 1 1h18l5.3 6zm7.7-9V17c0-3.9-3.1-7-7-7H13.7l5.3 6h18c.6 0 1 .4 1 1v14h-5l8 9 8-9h-5z"
+                            />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          1.5k
+                        </p>
+                      </button>
+                      <button class="btn btn--secondary" title="Likes">
+                        <div class="btn--secondary__icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 30 30"
+                            fill="#5B5B5B"
+                          >
+                            <path
+                              d="M20.455 4C17 4 15 7 15 7v17l1.204 1.597C19.579 22.951 27 16.886 27 10.545A6.545 6.545 0 0020.455 4zM9.545 4C13 4 15 7 15 7v17l-1.204 1.597C10.421 22.951 3 16.886 3 10.545A6.545 6.545 0 019.545 4z"
+                            />
+                            <path d="M15 22a2 2 0 100 4 2 2 0 100-4z" />
+                          </svg>
+                        </div>
+
+                        <p class="btn--secondary__numbers">
+                          1.6k
+                        </p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

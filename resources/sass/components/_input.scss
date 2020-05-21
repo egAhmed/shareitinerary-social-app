@@ -1,0 +1,43 @@
+.input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+
+  &--primary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $input-background-color;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 100px;
+    color: $input-placeholder-color;
+    padding-left: 35px;
+    font-size: 17px;
+    &__field{
+      padding: 9px 18px;
+      color: $secondary-color-text;
+    }
+
+    &::placeholder{
+      color: $input-placeholder-color;
+    }
+    
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      svg {
+        fill: $input-placeholder-color;
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+}

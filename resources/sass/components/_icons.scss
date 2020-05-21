@@ -1,0 +1,25 @@
+.icon {
+  fill: $icon-color;
+  color: $icon-color;
+
+  &--profile svg {
+    height: 28px !important;
+    width: 28px !important;
+  }
+
+  &--place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color-subtle;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 100%;
+    svg {
+      fill: $primary-color;
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
