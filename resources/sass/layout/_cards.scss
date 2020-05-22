@@ -89,6 +89,10 @@
     overflow: hidden;
     border-radius: 10px;
 
+    .video &__icon-play {
+      display: block;
+    }
+
     &:after {
       position: absolute;
       display: block;
@@ -119,6 +123,7 @@
     &__caption {
       display: flex;
       position: absolute;
+
       justify-content: space-between;
       flex-direction: column;
       padding: 10px;
@@ -127,6 +132,11 @@
       width: 100%;
       height: 100%;
       z-index: 3;
+      cursor: pointer;
+    }
+
+    &__caption:hover &__caption-footer p {
+      color: $secondary-color;
     }
 
     &__caption-header {
@@ -135,6 +145,7 @@
     }
 
     &__icon-play {
+      display: none;
       svg {
         height: 35px;
         width: 35px;
@@ -147,6 +158,7 @@
         color: $secondary-color-darker;
         font-size: 15px;
         margin-bottom: 10px;
+        @include transition;
       }
 
       ul {
@@ -179,6 +191,85 @@
 
         .filled svg {
           fill: $secondary-color !important;
+        }
+      }
+    }
+  }
+
+  &--comment {
+    display: flex;
+
+    .profile-image {
+      height: 35px;
+      width: 35px;
+      min-width: 35px;
+
+      &__main {
+        height: 100%;
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    &__main {
+      background-color: lighten($secondary-color-darker, 15%);
+      padding: 12px;
+      margin-left: 10px;
+      border-radius: 10px;
+    }
+
+    &__user {
+      font-size: 14px;
+      color: $secondary-color-text;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    &__time {
+      font-family: $font-regular;
+      font-size: 12px;
+      font-weight: 300;
+      color: $secondary-color-text-light;
+    }
+
+    &__text {
+      font-size: 13px;
+      margin-top: 12px;
+      color: $secondary-color-text-light;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__action {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      button {
+        display: flex;
+        align-items: center;
+        padding: 3px 4px;
+        border-radius: 3px;
+        svg {
+          height: 14px;
+          width: 14px;
+          stroke: $secondary-color-text-light;
+        }
+
+        span {
+          margin-left: 4px;
+          font-size: 12px;
+        }
+
+        &:hover {
+          color: $primary-color;
+          svg {
+            fill: $primary-color;
+            stroke: $primary-color !important;
+          }
         }
       }
     }

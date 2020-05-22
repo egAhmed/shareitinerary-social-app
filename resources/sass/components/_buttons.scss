@@ -4,6 +4,29 @@
   outline: none;
   cursor: pointer;
   font: inherit;
+  @include transition;
+
+  &--primary {
+    background-color: $primary-color-subtle;
+    color: $primary-color;
+    padding: 5px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+
+    &:hover {
+      background-color: darken($primary-color-subtle, 5%);
+    }
+
+    &__active {
+      background-color: $primary-color !important;
+      color: $secondary-color !important;
+      font-weight: 500 !important;
+
+      &:hover {
+        background-color: lighten($primary-color, 5%) !important;
+      }
+    }
+  }
 
   &--icon {
     position: relative;

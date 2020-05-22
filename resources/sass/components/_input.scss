@@ -15,15 +15,15 @@
     color: $input-placeholder-color;
     padding-left: 35px;
     font-size: 17px;
-    &__field{
+    &__field {
       padding: 9px 18px;
       color: $secondary-color-text;
     }
 
-    &::placeholder{
+    &::placeholder {
       color: $input-placeholder-color;
     }
-    
+
     &__icon {
       display: flex;
       align-items: center;
@@ -40,4 +40,53 @@
     }
   }
 
+  &--comment {
+    display: flex;
+    background-color: $input-background-color;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 10px;
+
+    .profile-image {
+      height: 35px;
+      width: 35px;
+      min-width: 35px;
+
+      &__main {
+        height: 100%;
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    input {
+      flex: 1;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: $font-regular;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      width: 35px;
+      min-width: 35px;
+      border-radius: 100%;
+      background-color: $secondary-color-darker;
+      svg {
+        fill: $secondary-color-text;
+        height: 20px;
+        width: 20px;
+      }
+
+      &:hover {
+        background: $primary-color !important;
+
+        svg {
+          fill: $secondary-color;
+        }
+      }
+    }
+  }
 }

@@ -34,9 +34,9 @@
     overflow: hidden;
     position: relative;
     border-radius: 100%;
-    height: 100%;
-    width: 100%;
-    min-width: 100%;
+    height: 105%;
+    width: 105%;
+    min-width: 105%;
   }
 
   img {
@@ -48,7 +48,6 @@
   }
 
   &::before {
-    content: "";
     z-index: 0;
     display: block;
     position: absolute;
@@ -60,5 +59,15 @@
     border: 2px solid $primary-color;
     transform: scale(1.1);
     border-radius: 100%;
+  }
+
+  &--active::before {
+    content: "";
+  }
+
+  &--active &__main {
+    height: 100%;
+    width: 100%;
+    min-width: 100%;
   }
 }

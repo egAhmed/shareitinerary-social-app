@@ -74,7 +74,9 @@
         <div class="sidebar">
           <div class="sidebar__inner">
             <div class="sidebar__profile">
-              <div class="profile-image profile-image--small">
+              <div
+                class="profile-image profile-image--small profile-image--active"
+              >
                 <div class="profile-image__main">
                   <img
                     src="./resources/images/faces/face-3.png"
@@ -165,7 +167,7 @@
                 </a>
               </li>
               <li class="sidebar__link-item">
-                <a href="/">
+                <a href="/profile.html">
                   <div class="sidebar__link-icon icon--profile">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -257,14 +259,20 @@
               </div>
 
               <div class="profile-page__content">
-                <div class="profile profile--large">
-                  <h1 class="profile__name">
-                    Christopher Lugod
-                  </h1>
+                <div class="profile-page__action">
+                  <div class="profile profile--large">
+                    <h1 class="profile__name">
+                      Christopher Lugod
+                    </h1>
 
-                  <div class="profile__username">
-                    @_christravel
+                    <div class="profile__username">
+                      @_christravel
+                    </div>
                   </div>
+
+                  <button class="btn btn--primary__active btn--primary ml-auto">
+                    Settings
+                  </button>
                 </div>
 
                 <p class="profile-page__text">
@@ -275,7 +283,13 @@
                 </p>
 
                 <div class="profile-page__others">
-                  <b>christopherlugod.com.ph</b>
+                  <a
+                    class="link"
+                    target="blank"
+                    rel="noopener"
+                    href="christopherlugod.com.ph"
+                    ><b>christopherlugod.com.ph</b></a
+                  >
                 </div>
               </div>
             </div>
@@ -298,7 +312,7 @@
           <section class="feed-container feed-container--main">
             <div class="row mt-1">
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-1.jpg"
@@ -378,7 +392,7 @@
                 </div>
               </div>
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post video" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-2.jpg"
@@ -458,7 +472,7 @@
                 </div>
               </div>
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-3.jpg"
@@ -538,7 +552,7 @@
                 </div>
               </div>
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-4.jpg"
@@ -618,7 +632,7 @@
                 </div>
               </div>
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-5.jpg"
@@ -698,7 +712,7 @@
                 </div>
               </div>
               <div class="col s6 mb-3">
-                <div class="card--post">
+                <div class="card--post" onclick="showModal()">
                   <div class="card--post__image">
                     <img
                       src="./resources/images/travel-pic/place-6.jpg"
@@ -782,5 +796,294 @@
         </main>
       </div>
     </div>
+
+    <div class="backdrop" id="modal-post">
+      <button class="btn backdrop__exit" id="modal-exit" title="exit">
+        <span>
+          <svg
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.91 14.91L3 0 .88 2.121l14.91 14.91L1 31.82l2.122 2.121L17.91 19.152 32.7 33.942l2.121-2.122L20.032 17.03l14.91-14.91L32.82 0 17.91 14.91z"
+              fill="#fff"
+            />
+          </svg>
+        </span>
+      </button>
+      <div class="modal modal--post">
+        <div class="modal--post__image">
+          <img
+            class="blur"
+            src="./resources/images/travel-pic/place-4.jpg"
+            alt="golden state bridge blurred"
+            draggable="false"
+          />
+          <img
+            class="main"
+            src="./resources/images/travel-pic/place-4.jpg"
+            alt="golden state bridge"
+            draggable="false"
+          />
+        </div>
+
+        <div class="modal--post__main">
+          <div class="modal--post__profile">
+            <div class="profile-image profile-image--xsmall">
+              <div class="profile-image__main">
+                <img
+                  src="./resources/images/faces/face-3.png"
+                  alt="user profile picture"
+                  draggable="false"
+                />
+              </div>
+            </div>
+
+            <div class="modal--post__name">
+              <a href="/">Christopher Lugod</a>
+              <div>May 20, 2000</div>
+            </div>
+          </div>
+          <div class="modal--post__content">
+            <div class="card--feed__place">
+              <div class="icon icon--place">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0C8.101563 0 5 3.101563 5 7C5 13 12 24 12 24C12 24 19 12.898438 19 7C19 3.101563 15.898438 0 12 0 Z M 12 9C10.898438 9 10 8.101563 10 7C10 5.898438 10.898438 5 12 5C13.101563 5 14 5.898438 14 7C14 8.101563 13.101563 9 12 9Z"
+                  />
+                </svg>
+              </div>
+              <p>
+                San Francisco Bridge, California USA
+              </p>
+            </div>
+
+            <div class="modal--post__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              eligendi consequatur voluptatem quod, dolores, a non explicabo
+              tempora cupiditate doloribus fugit quasi quos consectetur fugiat,
+              quibusdam earum aperiam aliquid! Dolorum tempore consectetur
+            </div>
+          </div>
+
+          <ul class="modal--post__counter">
+            <li>
+              <span class="outlined"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 30 24"
+                  fill="#5B5B5B"
+                >
+                  <path
+                    d="M20.455 4C17 4 15 7 15 7v17l1.204 1.597C19.579 22.951 27 16.886 27 10.545A6.545 6.545 0 0020.455 4zM9.545 4C13 4 15 7 15 7v17l-1.204 1.597C10.421 22.951 3 16.886 3 10.545A6.545 6.545 0 019.545 4z"
+                  />
+                  <path d="M15 22a2 2 0 100 4 2 2 0 100-4z" /></svg
+              ></span>
+
+              <div>1.5k</div>
+            </li>
+            <li>
+              <span class="outlined"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 40"
+                  fill="#5B5B5B"
+                >
+                  <path
+                    d="M9 46a1 1 0 01-.515-1.857c2.139-1.283 2.994-3.248 2.654-6.143H7c-2.757 0-5-2.243-5-5V9c0-2.757 2.243-5 5-5h36c2.757 0 5 2.243 5 5v24c0 2.757-2.243 5-5 5H20.684C17.708 45.205 11.56 46 9 46z"
+                  /></svg
+              ></span>
+
+              <div>1.5k</div>
+            </li>
+            <li>
+              <span class="filled"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 40"
+                  fill="#5B5B5B"
+                >
+                  <path
+                    d="M36.3 40H13c-3.9 0-7-3.1-7-7V19H1l8-9 8 9h-5v14c0 .6.4 1 1 1h18l5.3 6zm7.7-9V17c0-3.9-3.1-7-7-7H13.7l5.3 6h18c.6 0 1 .4 1 1v14h-5l8 9 8-9h-5z"
+                  /></svg
+              ></span>
+
+              <div>1.5k</div>
+            </li>
+          </ul>
+
+          <div class="modal--post__comment">
+            <ul>
+              <li>
+                <div class="card--comment">
+                  <div class="profile-image">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-4.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--comment__main">
+                    <div class="card--comment__header">
+                      <a href="/" class="card--comment__user">
+                        Christina Galles</a
+                      >
+
+                      <div class="card--comment__time">
+                        1hr ago
+                      </div>
+                    </div>
+
+                    <div class="card--comment__text">
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud
+                      exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                      consequat.
+                    </div>
+
+                    <div class="card--comment__action">
+                      <button class="btn">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 26 26"
+                          fill="#5B5B5B"
+                        >
+                          <path
+                            d="M9 10.977v3.149c0 .328-.16.574-.48.82-.32.082-.64.082-.88-.082-3.28-2.296-6.4-6.144-6.48-6.308A1.56 1.56 0 011.003 8L1 7.983c0-.164.08-.41.16-.492.08-.164 3.12-4.023 6.48-6.319.32-.165.64-.247.88-.083.32.164.48.41.48.738v9.15z"
+                          />
+                          <path
+                            fill="none"
+                            stroke-width="4"
+                            d="M7 8c9.389 0 17 7.611 17 17"
+                          />
+                        </svg>
+                        <span>Reply</span>
+                      </button>
+
+                      <button class="btn">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 30 30"
+                          fill="#5B5B5B"
+                        >
+                          <path
+                            d="M20.455 4C17 4 15 7 15 7v17l1.204 1.597C19.579 22.951 27 16.886 27 10.545A6.545 6.545 0 0020.455 4zM9.545 4C13 4 15 7 15 7v17l-1.204 1.597C10.421 22.951 3 16.886 3 10.545A6.545 6.545 0 019.545 4z"
+                          />
+                          <path d="M15 22a2 2 0 100 4 2 2 0 100-4z" />
+                        </svg>
+                        <span>Like</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card--comment">
+                  <div class="profile-image">
+                    <div class="profile-image__main">
+                      <img
+                        src="./resources/images/faces/face-3.jpg"
+                        alt="user profile picture"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card--comment__main">
+                    <div class="card--comment__header">
+                      <a href="/" class="card--comment__user"> Daryl Dixon</a>
+
+                      <div class="card--comment__time">
+                        1hr ago
+                      </div>
+                    </div>
+
+                    <div class="card--comment__text">
+                      Wow great place!
+                    </div>
+
+                    <div class="card--comment__action">
+                      <button class="btn">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 26 26"
+                          fill="#5B5B5B"
+                        >
+                          <path
+                            d="M9 10.977v3.149c0 .328-.16.574-.48.82-.32.082-.64.082-.88-.082-3.28-2.296-6.4-6.144-6.48-6.308A1.56 1.56 0 011.003 8L1 7.983c0-.164.08-.41.16-.492.08-.164 3.12-4.023 6.48-6.319.32-.165.64-.247.88-.083.32.164.48.41.48.738v9.15z"
+                          />
+                          <path
+                            fill="none"
+                            stroke-width="4"
+                            d="M7 8c9.389 0 17 7.611 17 17"
+                          />
+                        </svg>
+                        <span>Reply</span>
+                      </button>
+
+                      <button class="btn">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 30 30"
+                          fill="#5B5B5B"
+                        >
+                          <path
+                            d="M20.455 4C17 4 15 7 15 7v17l1.204 1.597C19.579 22.951 27 16.886 27 10.545A6.545 6.545 0 0020.455 4zM9.545 4C13 4 15 7 15 7v17l-1.204 1.597C10.421 22.951 3 16.886 3 10.545A6.545 6.545 0 019.545 4z"
+                          />
+                          <path d="M15 22a2 2 0 100 4 2 2 0 100-4z" />
+                        </svg>
+                        <span>Like</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="modal--post__comment-action">
+              <div class="input--comment">
+                <div class="profile-image">
+                  <div class="profile-image__main">
+                    <img
+                      src="./resources/images/faces/face-4.jpg"
+                      alt="user profile picture"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="type your comment here"
+                />
+
+                <button class="btn" title="send">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0.9375 0.945313L2.820313 7L15 7 Z M 2.820313 8L0.9375 14.050781L15 8Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./resources/js/modal.js"></script>
   </body>
 </html>

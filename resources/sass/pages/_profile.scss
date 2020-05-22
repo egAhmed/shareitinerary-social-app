@@ -3,6 +3,12 @@
   &__header {
   }
 
+  &__action {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   &__main {
     display: flex;
     width: 100%;
@@ -31,6 +37,11 @@
     margin-top: 10px;
     font-weight: 500;
     font-family: $font-regular;
+
+    & .link {
+      text-decoration: none;
+      color: $secondary-color-text;
+    }
   }
 
   &__counter {
