@@ -1,3 +1,5 @@
 section {
-  color: var(--primary-color);
+  &--feeds {
+    padding-top: 0 !important;
+  }
 }

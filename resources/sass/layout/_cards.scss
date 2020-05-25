@@ -274,4 +274,43 @@
       }
     }
   }
+
+  &--notification {
+    display: flex;
+    text-decoration: none;
+    color: $secondary-color-text;
+    background-color: $base-color;
+    padding: 15px 20px;
+    @include transition;
+
+    &:hover {
+      background-color: rgba($primary-color-subtle, 0.8);
+    }
+
+    &__content {
+      margin-left: 20px;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    &__name {
+      font-weight: bold;
+    }
+
+    &__time {
+      font-size: 13px;
+      font-family: $font-regular;
+      color: $secondary-color-text-light;
+    }
+
+    &__text {
+      font-size: 16px;
+      font-family: $font-regular;
+      color: $secondary-color-text-light;
+    }
+  }
 }

@@ -71,3 +71,26 @@
     min-width: 100%;
   }
 }
+
+.notification {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  position: fixed;
+  height: 600px;
+  width: 500px;
+  background: $secondary-color;
+  border: 1px solid rgba($color-black, 0.1);
+  box-shadow: $modal-shadow;
+  z-index: 100;
+  border-radius: 5px;
+
+  &__header {
+    padding: 20px;
+  }
+
+  &__body {
+    flex: 1 1 100%;
+    overflow: auto;
+  }
+}

@@ -3,14 +3,18 @@ $font-regular: "Roboto", sans-serif;
 
 $primary-color: #fdb813;
 $primary-color-subtle: #fff8e9;
+$primary-color-text: #fff;
 
 $secondary-color: #fff;
 $secondary-color-darker: #d2d2d2;
 $secondary-color-text: #000000;
 $secondary-color-text-light: #5b5b5b;
+$secondary-color-text-lighter: #f3f3f3;
 
 $input-background-color: #f1f1f1;
 $input-placeholder-color: #c6c6c6;
+
+$base-color: #fdfdfd;
 
 $color-black: #000;
 
@@ -19,3 +23,5 @@ $navbar-height: 80px;
 $sidebar-width: 320px;
 $content-width: 750px;
 $border-separation: 1px solid rgba($secondary-color-text, 0.05);
+
+$modal-shadow: 0 0 30px rgba($color-black, 0.1);

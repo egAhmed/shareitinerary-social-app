@@ -50,7 +50,7 @@
               </span>
             </div>
 
-            <button class="btn btn--icon ml-auto">
+            <button class="btn btn--icon ml-auto" id="btn-holder">
               <span class="btn--icon__count"></span>
               <p class="btn--icon__icon icon">
                 <svg
@@ -113,7 +113,7 @@
                     </ul> -->
 
             <ul class="sidebar__link">
-              <li class="sidebar__link-item sidebar--active">
+              <li class="sidebar__link-item">
                 <a href="/">
                   <div class="sidebar__link-icon">
                     <svg
@@ -166,7 +166,7 @@
                   </div>
                 </a>
               </li>
-              <li class="sidebar__link-item">
+              <li class="sidebar__link-item sidebar--active">
                 <a href="/profile.html">
                   <div class="sidebar__link-icon icon--profile">
                     <svg
@@ -175,8 +175,6 @@
                       fill="#5B5B5B"
                     >
                       <path
-                        fill="none"
-                        stroke="#5B5B5B"
                         stroke-linejoin="round"
                         stroke-width="2"
                         d="M3 22.3v-1.1c0-2 2.9-3.9 6.3-4.5 0 0 1-1.1.8-2.1C9 13.4 8.7 12 8.7 12c-.2-.1-.4-.2-.6-.5-.3-.5-.7-1.6-.6-2.3.1-.8.3-.5.3-.7-.7-1.7-.4-3.8.5-5.4C10 0 13.8.9 14.4 2.1c3.6-.7 3.4 4.9 2.9 6.4 0 0 .3.1.3 1.4-.1 1.4-1.2 2.3-1.2 2.3 0 .4-.5 1.5-1.2 2.5-.6 1.3.7 2.1.7 2.1 3.4.6 6.2 2.5 6.2 4.5v1.1c0 1.3-4.9 2.7-9.5 2.7C7.9 25 3 24.5 3 22.3z"
@@ -798,23 +796,18 @@
     </div>
 
     <div class="backdrop" id="modal-post">
-      <button class="btn backdrop__exit" id="modal-exit" title="exit">
-        <span>
-          <svg
-            viewBox="0 0 50 50"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M17.91 14.91L3 0 .88 2.121l14.91 14.91L1 31.82l2.122 2.121L17.91 19.152 32.7 33.942l2.121-2.122L20.032 17.03l14.91-14.91L32.82 0 17.91 14.91z"
-              fill="#fff"
-            />
-          </svg>
-        </span>
-      </button>
       <div class="modal modal--post">
+        <button class="btn modal__exit" id="modal-exit" title="exit">
+          <span>
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.91 14.91L3 0 .88 2.121l14.91 14.91L1 31.82l2.122 2.121L17.91 19.152 32.7 33.942l2.121-2.122L20.032 17.03l14.91-14.91L32.82 0 17.91 14.91z"
+              />
+            </svg>
+          </span>
+        </button>
         <div class="modal--post__image">
           <img
             class="blur"
@@ -1084,6 +1077,259 @@
       </div>
     </div>
 
+    <div class="backdrop" id="modal-create">
+      <div class="modal modal--create">
+        <div class="modal--create__modal"></div>
+        <button class="btn modal__exit" id="modal-create-exit" title="exit">
+          <span>
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.91 14.91L3 0 .88 2.121l14.91 14.91L1 31.82l2.122 2.121L17.91 19.152 32.7 33.942l2.121-2.122L20.032 17.03l14.91-14.91L32.82 0 17.91 14.91z"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <div class="modal--create__header">
+          <div class="heading--primary">Create a Post</div>
+        </div>
+
+        <div class="modal--create__content">
+          <input
+            type="text"
+            placeholder="Location"
+            class="input input--secondary mb-2"
+          />
+
+          <textarea
+            type="text"
+            rows="4"
+            placeholder="Caption"
+            class="input input--secondary"
+          ></textarea>
+
+          <div class="modal--create__media mt-1" id="media-container">
+            <!-- <img
+              src="./resources/images/travel-pic/place-1.jpg"
+              alt="Post image"
+              draggable="false"
+            />
+
+            <video src="./resources/images/mov_bbb.mp4" controls></video> -->
+          </div>
+        </div>
+
+        <div class="modal--create__actions">
+          <button
+            class="btn btn--icon btn--icon__background"
+            id="file-btn"
+            name="Click to add image/video"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 2C1.675781 2 1 2.675781 1 3.5L1 12.5C1 13.324219 1.675781 14 2.5 14L13.5 14C14.324219 14 15 13.324219 15 12.5L15 3.5C15 2.675781 14.324219 2 13.5 2 Z M 2.5 3L13.5 3C13.78125 3 14 3.21875 14 3.5L14 10.765625L10.496094 7.066406L8.542969 9.265625L5.53125 6.089844L2 10.066406L2 3.5C2 3.21875 2.21875 3 2.5 3 Z M 11 4C10.449219 4 10 4.449219 10 5C10 5.550781 10.449219 6 11 6C11.550781 6 12 5.550781 12 5C12 4.449219 11.550781 4 11 4 Z M 5.554688 7.566406L10.707031 13L2.5 13C2.21875 13 2 12.78125 2 12.5L2 11.574219 Z M 10.515625 8.546875L14 12.21875L14 12.5C14 12.78125 13.78125 13 13.5 13L12.082031 13L9.234375 9.992188Z"
+              />
+            </svg>
+          </button>
+          <input type="file" id="file-input" hidden accept="image/*,video/*" />
+          <button class="btn btn--post ml-auto">
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notification" id="notification">
+      <div class="notification__header">
+        <div class="heading--primary">Notifcation</div>
+      </div>
+
+      <div class="notification__body">
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+        <a href="/" class="card card--notification">
+          <div class="profile-image profile-image--small">
+            <div class="profile-image__main">
+              <img
+                src="./resources/images/faces/face-4.jpg"
+                alt="user profile picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+
+          <div class="card--notification__content">
+            <div class="card--notification__header">
+              <div class="card--notification__name">
+                Christina Galles
+              </div>
+
+              <div class="card--notification__time">
+                1hr ago
+              </div>
+            </div>
+            <div class="card--notification__text">
+              Commented to your post “magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation... ”
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <button class="btn btn--fab" onclick="showModalCreate()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 26 26"
+      >
+        <path
+          d="M12 3C11.398438 3 11 3.398438 11 4L11 11L4 11C3.398438 11 3 11.398438 3 12L3 14C3 14.601563 3.398438 15 4 15L11 15L11 22C11 22.601563 11.398438 23 12 23L14 23C14.601563 23 15 22.601563 15 22L15 15L22 15C22.601563 15 23 14.601563 23 14L23 12C23 11.398438 22.601563 11 22 11L15 11L15 4C15 3.398438 14.601563 3 14 3Z"
+        />
+      </svg>
+    </button>
+
     <script src="./resources/js/modal.js"></script>
+    <script src="./resources/js/notification.js"></script>
+    <script src="./resources/js/uploadMedia.js"></script>
   </body>
 </html>

@@ -89,4 +89,19 @@
       }
     }
   }
+
+  &--secondary {
+    background-color: $input-background-color;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 150px;
+    padding: 9px 18px;
+    color: $secondary-color-text;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
 }

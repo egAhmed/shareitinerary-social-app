@@ -1,5 +1,6 @@
 .modal {
-  box-shadow: 0 0 30px rgba($color-black, 0.1);
+  position: relative;
+  box-shadow: $modal-shadow;
 
   &--post {
     display: flex;
@@ -160,6 +161,60 @@
       }
     }
   }
+
+  &--create {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 600px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+
+    &__header {
+      padding: 20px;
+    }
+
+    &__content {
+      padding: 0 20px;
+      flex: 0 1 100%;
+      max-height: 450px;
+      padding-bottom: 10px;
+      overflow: auto;
+    }
+
+    &__media {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+
+      img,
+      video {
+        width: 100%;
+      }
+    }
+
+    &__actions {
+      display: flex;
+      padding: 0 20px;
+      font-weight: 600;
+      align-items: center;
+      height: 80px;
+    }
+  }
+
+  &__exit {
+    position: absolute !important;
+    right: 10px;
+    top: 20px;
+
+    span {
+      svg {
+        fill: $secondary-color-text-light !important;
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
 }
 
 .backdrop {
@@ -173,19 +228,6 @@
   left: 0;
   z-index: 100;
   background-color: rgba($color-black, 0.3);
-
-  &__exit {
-    position: absolute;
-    right: 1%;
-    top: 3%;
-
-    span {
-      svg {
-        height: 40px;
-        width: 40px;
-      }
-    }
-  }
 
   &--show {
     display: flex;

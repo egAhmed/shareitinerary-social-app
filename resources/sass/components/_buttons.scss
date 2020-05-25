@@ -1,4 +1,5 @@
 .btn {
+  position: relative;
   background-color: transparent;
   border: none;
   outline: none;
@@ -29,9 +30,11 @@
   }
 
   &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     background-color: transparent;
-
     &__count {
       position: absolute;
       right: 2px;
@@ -40,11 +43,48 @@
       padding: 6px;
       background: $primary-color;
       border-radius: 100%;
+      z-index: 2;
     }
 
     svg {
+      position: relative;
       height: 34px;
       width: 34px;
+      z-index: 1;
+    }
+
+    &__background {
+      height: 50px;
+      width: 50px;
+      &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgba($secondary-color-darker, 0.3);
+      }
+
+      svg {
+        fill: $secondary-color-text-light;
+        height: 25px !important;
+        width: 25px !important;
+      }
+
+      &:hover {
+        &::after {
+          background-color: $primary-color-subtle;
+        }
+
+        svg {
+          fill: $primary-color;
+        }
+      }
     }
   }
 
@@ -70,5 +110,53 @@
       font-size: 13px;
       color: $secondary-color-text-light;
     }
+  }
+
+  &--create {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $secondary-color-text-lighter;
+    border-radius: 5px;
+    color: $secondary-color-text-light;
+    border: 1px solid rgba($secondary-color-text, 0.1);
+    border-radius: 100px;
+    @include transition;
+
+    &:hover {
+      background-color: darken($secondary-color-text-lighter, 3%);
+    }
+
+    svg {
+      height: 24px;
+      fill: $secondary-color-text-light !important;
+    }
+  }
+
+  &--fab {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100%;
+    background-color: $primary-color;
+    box-shadow: $modal-shadow;
+    svg {
+      height: 30px;
+      fill: $primary-color-text;
+    }
+  }
+
+  &--post {
+    background-color: $primary-color;
+    color: $primary-color-text;
+    padding: 8px 60px;
+    border-radius: 5px;
   }
 }

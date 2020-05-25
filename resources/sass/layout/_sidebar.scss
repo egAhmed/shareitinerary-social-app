@@ -117,6 +117,7 @@
 
   &--active &__link-icon {
     svg {
+      stroke: $primary-color !important;
       fill: $primary-color !important;
     }
   }
