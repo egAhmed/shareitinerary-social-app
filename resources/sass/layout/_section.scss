@@ -1,5 +1,11 @@
 section {
+  flex: 1;
+  width: 100%;
   &--feeds {
     padding-top: 0 !important;
+  }
+
+  @include respond(mobile-lg) {
+    padding: 5px 0 !important;
   }
 }

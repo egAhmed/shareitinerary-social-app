@@ -44,6 +44,11 @@
       background: $primary-color;
       border-radius: 100%;
       z-index: 2;
+
+      @include respond(mobile-lg) {
+        top: 0;
+        right: 0;
+      }
     }
 
     svg {
@@ -51,6 +56,11 @@
       height: 34px;
       width: 34px;
       z-index: 1;
+
+      @include respond(mobile-lg) {
+        height: 30px;
+        width: 30px;
+      }
     }
 
     &__background {
@@ -91,6 +101,11 @@
   &--secondary {
     padding: 5px 10px;
 
+    @include respond(mobile-lg) {
+      display: flex;
+      align-items: center;
+    }
+
     &:hover &__icon {
       svg {
         fill: $primary-color;
@@ -109,6 +124,10 @@
       font-weight: 500;
       font-size: 13px;
       color: $secondary-color-text-light;
+
+      @include respond(mobile-lg) {
+        margin-left: 8px;
+      }
     }
   }
 
@@ -122,8 +141,13 @@
     border-radius: 5px;
     color: $secondary-color-text-light;
     border: 1px solid rgba($secondary-color-text, 0.1);
-    border-radius: 100px;
+    border-radius: 10px;
     @include transition;
+
+    @include respond(mobile-lg) {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
 
     &:hover {
       background-color: darken($secondary-color-text-lighter, 3%);
@@ -132,12 +156,16 @@
     svg {
       height: 24px;
       fill: $secondary-color-text-light !important;
+      @include respond(mobile-lg) {
+        height: 22px;
+      }
     }
   }
 
   &--fab {
     position: fixed;
     display: flex;
+    z-index: 50;
     align-items: center;
     justify-content: center;
     height: 70px;
@@ -147,9 +175,20 @@
     border-radius: 100%;
     background-color: $primary-color;
     box-shadow: $modal-shadow;
+
+    @include respond(mobile-lg) {
+      height: 60px;
+      width: 60px;
+      bottom: 20px;
+      right: 20px;
+    }
     svg {
       height: 30px;
       fill: $primary-color-text;
+
+      @include respond(mobile-lg) {
+        height: 25px;
+      }
     }
   }
 

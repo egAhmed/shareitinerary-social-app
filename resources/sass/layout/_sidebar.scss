@@ -1,15 +1,25 @@
 .sidebar {
-  width: $sidebar-width;
-
+  @include sidebar-size;
   &__inner {
     position: fixed;
+    // left: 0;
     padding: 20px 20px 20px 0;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    width: $sidebar-width;
+    @include sidebar-size;
     height: 100vh;
     max-height: calc(100vh - #{$navbar-height});
+
+    @include respond(laptop) {
+      padding-right: 10px;
+    }
+    @include respond(tab-land) {
+      left: 0;
+    }
+    @include respond(mobile-lg) {
+      padding: 8px 5px;
+    }
   }
 
   &__profile {
@@ -17,11 +27,23 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-
     align-items: center;
+
+    @include respond(laptop) {
+      justify-content: center;
+      padding-left: 0;
+
+      .profile-image__main img {
+        margin-left: 0;
+      }
+    }
 
     & .profile {
       margin-left: 15px;
+
+      @include respond(laptop) {
+        display: none;
+      }
     }
   }
 
@@ -64,6 +86,10 @@
     margin-top: 40px;
     height: 100%;
     width: 100%;
+
+    @include respond(mobile-lg) {
+      margin-top: 30px;
+    }
   }
 
   &__link-item {
@@ -80,6 +106,13 @@
       text-decoration: none;
       align-items: center;
       padding: 9px 12px;
+
+      @include respond(laptop) {
+        justify-content: center;
+      }
+      @include respond(mobile-lg) {
+        padding: 8px;
+      }
     }
 
     &:not(:last-child) {
@@ -99,12 +132,37 @@
       height: 30px;
       width: 30px;
     }
+
+    a {
+      display: inline;
+    }
+
+    @include respond(laptop) {
+      margin-right: 0;
+      svg {
+        transform: scale(1.2);
+      }
+    }
+    @include respond(tab-land) {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+    @include respond(mobile-lg) {
+      svg {
+        transform: scale(1);
+      }
+    }
   }
 
   &__link-title {
     font-size: 18px;
     font-weight: 600;
     color: $secondary-color-text-light;
+
+    @include respond(laptop) {
+      display: none;
+    }
   }
 
   &--active {

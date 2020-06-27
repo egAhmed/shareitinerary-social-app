@@ -1,10 +1,9 @@
 .navbar {
-  height: $navbar-height;
-
+  @include navbar-size;
   &__inner {
     position: fixed;
     width: 100%;
-    height: $navbar-height;
+    @include navbar-size;
     background-color: $secondary-color;
     z-index: 100;
   }
@@ -27,6 +26,10 @@
     height: 45px;
     img {
       height: 100%;
+    }
+
+    @include respond(laptop) {
+      height: 40px;
     }
   }
 }

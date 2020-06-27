@@ -3,19 +3,33 @@
     font-family: $font-heading;
     font-size: 25px;
     font-weight: 700;
+
+    @include respond(tab-port) {
+      font-size: 22px;
+    }
+    @include respond(mobile-lg) {
+      font-size: 20px;
+    }
   }
 }
 
 .profile {
   display: flex;
   flex-direction: column;
-
+  line-height: 1.2;
   &--post &__name {
     font-size: 15px;
+    @include respond(mobile-lg) {
+      font-size: 12px;
+    }
   }
 
   &--post &__username {
     font-size: 14px;
+
+    @include respond(mobile-lg) {
+      font-size: 12px;
+    }
   }
 
   &--large &__name {
@@ -30,6 +44,10 @@
     font-weight: 600;
     font-size: 18px;
     color: $secondary-color-text;
+
+    @include respond(laptop) {
+      font-size: 16px;
+    }
   }
 
   &__username {

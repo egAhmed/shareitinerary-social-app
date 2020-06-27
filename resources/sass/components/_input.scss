@@ -15,8 +15,31 @@
     color: $input-placeholder-color;
     padding-left: 35px;
     font-size: 17px;
+
+    @include respond(laptop) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+    }
+    @include respond(tab-land) {
+      width: 380px;
+    }
+    @include respond(mobile-lg) {
+      width: 300px;
+    }
+
     &__field {
       padding: 9px 18px;
+      @include respond(tab-land) {
+        padding: 8px 10px;
+      }
+      @include respond(tab-land) {
+        font-size: 14px;
+        padding: 7px 8px;
+      }
+
       color: $secondary-color-text;
     }
 
@@ -36,6 +59,20 @@
         fill: $input-placeholder-color;
         height: 24px;
         width: 24px;
+      }
+      @include respond(tab-land) {
+        left: 15px;
+
+        svg {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      @include respond(mobile-lg) {
+        svg {
+          height: 18px;
+          width: 18px;
+        }
       }
     }
   }
@@ -99,6 +136,11 @@
     padding: 9px 18px;
     color: $secondary-color-text;
     border-radius: 5px;
+
+    @include respond(mobile-lg) {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
 
     &::placeholder {
       color: $input-placeholder-color;

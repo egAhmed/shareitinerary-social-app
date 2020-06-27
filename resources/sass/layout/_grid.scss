@@ -5,8 +5,8 @@
 
 .feed-container {
   display: block;
-  width: $content-width;
-  // margin-left: auto;
+  // width: $content-width;
+  flex: 1;
   padding: 0 10px;
 
   &--main {
@@ -14,9 +14,32 @@
     padding: 10px 20px;
     // border-radius: 20px;
     border: $border-separation;
+
+    @include respond(mobile-lg) {
+      padding: 5px 14px;
+    }
   }
 }
 
 .sidebar-container {
-  width: $sidebar-width;
+  @include sidebar-size;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1260px;
+  max-width: 1264px;
+
+  @include respond(desktop) {
+    width: 70%;
+  }
+
+  @include respond(laptop) {
+    width: 90%;
+  }
+
+  @include respond(tab-land) {
+    width: 100%;
+    // padding: 0 10px;
+  }
 }

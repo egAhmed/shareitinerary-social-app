@@ -8,13 +8,49 @@ class Attach {
     this.holder = document.querySelector(holderID);
     this.content = document.querySelector(contentID);
     this.options = options;
-    window.addEventListener("resize", this.curretWindowSize);
+    this.attachRemove();
+    this.attachListener();
+  }
+
+  attachRemove() {
+    const self = this;
+    window.addEventListener("click", () => {
+      self.hideContent();
+    });
+  }
+
+  attachListener() {
+    const self = this;
+    window.addEventListener("resize", () => {
+      setTimeout(() => self.currentWindowSize(), 100);
+    });
+  }
+
+  currentWindowSize() {
+    this.setContentPos();
+  }
+
+  autoContent() {
+    this.show = !this.show;
+    this.setContentPos();
+  }
+
+  hideContent() {
+    if (this.show) {
+      this.show = false;
+      this.setContentPos();
+    }
+  }
+
+  showContent() {
+    this.show = true;
+    this.setContentPos();
   }
 
   setContentPos() {
     const holderBound = this.holder.getBoundingClientRect();
     const contentBound = this.content.getBoundingClientRect();
-
+    console.log("hello world");
     this.content.setAttribute(
       "style",
       `visibility: ${this.show ? "visible" : "hidden"} !important; opacity: ${
@@ -27,18 +63,16 @@ class Attach {
     );
   }
 
-  currentWindowSize() {
-    this.setContentPos();
-  }
-
-  showContent() {
-    this.show = !this.show;
-    this.setContentPos();
+  destroy() {
+    window.removeEventListener("resize");
   }
 }
 
 const attach = new Attach("#btn-holder", "#notification");
 
-document.getElementById("btn-holder").addEventListener("click", () => {
-  attach.showContent();
+document.getElementById("btn-holder").addEventListener("click", (e) => {
+  attach.autoContent();
+  e.stopPropagation();
 });
+
+// attach.autoContent();
