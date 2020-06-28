@@ -85,4 +85,7 @@
   @include respond(mobile-lg) {
     height: 70px;
   }
+  @include respond(mobile-m) {
+    height: 60px;
+  }
 }

@@ -10,7 +10,7 @@
     border-radius: 5px;
     overflow: hidden;
 
-    @include respond(mobile-lg) {
+    @include respond(tab-land) {
       flex-direction: column;
       height: 100vh;
     }
@@ -22,7 +22,7 @@
       overflow: hidden;
       user-select: none;
 
-      @include respond(mobile-lg) {
+      @include respond(tab-land) {
         height: 40vh;
         overflow: hidden;
       }
@@ -37,7 +37,8 @@
         transform: translate(-50%, -50%);
         object-fit: cover;
         filter: blur(8px) grayscale(5%);
-        @include respond(mobile-lg) {
+
+        @include respond(tab-land) {
           height: 100%;
         }
       }
@@ -57,7 +58,7 @@
       width: 680px;
       padding: 15px;
 
-      @include respond(mobile-lg) {
+      @include respond(tab-land) {
         width: 100%;
         overflow: auto;
       }
@@ -207,6 +208,9 @@
       max-height: 450px;
       padding-bottom: 10px;
       overflow: auto;
+      @include respond(mobile-m) {
+        padding: 0 15px;
+      }
     }
 
     &__media {

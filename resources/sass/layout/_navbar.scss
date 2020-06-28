@@ -31,5 +31,8 @@
     @include respond(laptop) {
       height: 40px;
     }
+    @include respond(mobile-m) {
+      height: 35px;
+    }
   }
 }

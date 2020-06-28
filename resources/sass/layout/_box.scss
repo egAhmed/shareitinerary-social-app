@@ -14,6 +14,12 @@
       width: 40px;
       min-width: 40px;
     }
+    @include respond(mobile-lg) {
+      height: 35px;
+      min-height: 35px;
+      width: 35px;
+      min-width: 35px;
+    }
   }
 
   &--small {
@@ -60,6 +66,12 @@
     width: 160px;
     min-width: 160px;
     max-width: 160px;
+    @include respond(mobile-lg) {
+      height: 150px;
+      min-height: 150px;
+      width: 150px;
+      min-width: 150px;
+    }
   }
 
   &__main {
@@ -72,7 +84,7 @@
   }
 
   img {
-    position: relative;
+    // position: relative;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -125,11 +137,18 @@
     height: 480px;
     width: 400px;
   }
+  @include respond(mobile-lg) {
+    width: 90vw;
+    height: 500px;
+  }
 
   &__header {
     padding: 20px;
     @include respond(tab-land) {
       padding: 20px 15px;
+    }
+    @include respond(tab-land) {
+      font-size: 14px;
     }
   }
 

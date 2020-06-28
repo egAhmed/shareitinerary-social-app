@@ -1,5 +1,12 @@
 .sidebar {
   @include sidebar-size;
+
+  @include respond(mobile-m) {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+  }
+
   &__inner {
     position: fixed;
     // left: 0;
@@ -20,6 +27,16 @@
     @include respond(mobile-lg) {
       padding: 8px 5px;
     }
+    @include respond(mobile-m) {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100vw;
+      height: 60px;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      flex-direction: row;
+      background-color: white;
+    }
   }
 
   &__profile {
@@ -36,6 +53,10 @@
       .profile-image__main img {
         margin-left: 0;
       }
+    }
+
+    @include respond(mobile-m) {
+      display: none;
     }
 
     & .profile {
@@ -90,6 +111,11 @@
     @include respond(mobile-lg) {
       margin-top: 30px;
     }
+
+    @include respond(mobile-m) {
+      flex-direction: row;
+      margin-top: 0;
+    }
   }
 
   &__link-item {
@@ -117,6 +143,10 @@
 
     &:not(:last-child) {
       margin-bottom: 10px;
+
+      @include respond(mobile-lg) {
+        margin-bottom: 0;
+      }
     }
     &:last-child {
       margin-top: auto;

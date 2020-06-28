@@ -35,13 +35,24 @@
     border-radius: 10px;
     border: 1px solid rgba($secondary-color-text, 0.08);
 
+    @include respond(mobile-m) {
+      .card--feed__place {
+        display: none;
+      }
+    }
+
     &__header {
       padding: 13px 20px;
       display: flex;
       align-items: center;
 
       @include respond(mobile-lg) {
-        padding: 10px 10px;
+        padding: 10px;
+      }
+      @include respond(mobile-m) {
+        padding: 8px;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
@@ -93,6 +104,9 @@
       @include respond(mobile-lg) {
         height: 280px;
       }
+      @include respond(mobile-m) {
+        height: 250px;
+      }
     }
 
     &__footer {
@@ -103,6 +117,9 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 8px 10px;
+      }
+      @include respond(mobile-lg) {
+        padding: 8px;
       }
     }
 
@@ -133,6 +150,16 @@
     overflow: hidden;
     border-radius: 10px;
 
+    @include respond(tab-port) {
+      height: 300px;
+    }
+
+    @include respond(mobile-lg) {
+      height: 280px;
+    }
+    @include respond(mobile-m) {
+      height: 250px;
+    }
     .video &__icon-play {
       display: block;
     }
@@ -177,6 +204,12 @@
       height: 100%;
       z-index: 3;
       cursor: pointer;
+      @include respond(tab-port) {
+        font-size: 14px;
+      }
+      @include respond(mobile-lg) {
+        font-size: 12px;
+      }
     }
 
     &__caption:hover &__caption-footer p {
@@ -194,6 +227,11 @@
         height: 35px;
         width: 35px;
         fill: $secondary-color;
+
+        @include respond(tab-port) {
+          height: 30px;
+          width: 30px;
+        }
       }
     }
 
@@ -203,6 +241,13 @@
         font-size: 15px;
         margin-bottom: 10px;
         @include transition;
+
+        @include respond(tab-port) {
+          font-size: 14px;
+        }
+        @include respond(tab-port) {
+          font-size: 12px;
+        }
       }
 
       ul {
@@ -222,11 +267,23 @@
         div {
           font-family: $font-regular;
           margin-left: 3px;
+          @include respond(mobile-lg) {
+            margin-left: 1px;
+          }
         }
 
         svg {
           height: 25px;
           width: 25px;
+
+          @include respond(tab-port) {
+            height: 20px;
+            width: 20px;
+          }
+          @include respond(mobile-lg) {
+            height: 16px;
+            width: 16px;
+          }
         }
 
         .outlined svg {
@@ -330,12 +387,18 @@
     @include respond(tab-land) {
       padding: 12px 15px;
     }
+    @include respond(mobile-m) {
+      padding: 10px 12px;
+    }
     &:hover {
       background-color: rgba($primary-color-subtle, 0.8);
     }
 
     &__content {
       margin-left: 20px;
+      @include respond(mobile-m) {
+        margin-left: 15px;
+      }
     }
 
     &__header {
@@ -349,6 +412,9 @@
 
       @include respond(tab-land) {
         font-size: 15px;
+      }
+      @include respond(mobile-m) {
+        font-size: 13px;
       }
     }
 
@@ -371,6 +437,9 @@
       }
       @include respond(mobile-lg) {
         font-size: 14px;
+      }
+      @include respond(mobile-m) {
+        font-size: 12px;
       }
     }
   }

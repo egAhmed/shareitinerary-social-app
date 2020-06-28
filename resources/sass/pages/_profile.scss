@@ -1,5 +1,10 @@
 .profile-page {
   width: $content-width;
+
+  @include respond(mobile-m) {
+    padding-bottom: 20px;
+  }
+
   &__header {
   }
 
@@ -7,13 +12,30 @@
     display: flex;
     align-items: flex-start;
     width: 100%;
+
+    @include respond(mobile-lg) {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      .btn--primary {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    }
   }
 
   &__main {
+    position: relative;
     display: flex;
     width: 100%;
     padding: 40px 20px 20px 20px;
     align-items: flex-start;
+    @include respond(mobile-lg) {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
   }
 
   &__content {
@@ -21,6 +43,11 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 30px;
+
+    @include respond(mobile-lg) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 
   &__text {
@@ -31,6 +58,10 @@
     margin-top: 15px;
     color: $secondary-color-text-light;
     line-height: 1.4;
+
+    @include respond(tab-port) {
+      font-size: 15px;
+    }
   }
 
   &__others {
@@ -41,6 +72,10 @@
     & .link {
       text-decoration: none;
       color: $secondary-color-text;
+
+      @include respond(mobile-lg) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -49,6 +84,16 @@
     list-style: none;
     padding: 14px 0 20px 0;
 
+    @include respond(tab-port) {
+      justify-content: space-between;
+      padding: 15px 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    @include respond(mobile-lg) {
+      padding: 10px 15px;
+    }
     li {
       display: flex;
       font-weight: 600;
@@ -56,6 +101,10 @@
       align-items: center;
       &:not(:last-child) {
         margin-right: 20px;
+      }
+
+      @include respond(mobile-lg) {
+        font-size: 14px;
       }
     }
 
@@ -68,6 +117,10 @@
       font-size: 16px;
       font-weight: 500;
       color: $secondary-color-text-light;
+
+      @include respond(mobile-lg) {
+        font-size: 14px;
+      }
     }
   }
 }

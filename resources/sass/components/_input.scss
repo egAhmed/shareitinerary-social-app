@@ -30,6 +30,10 @@
       width: 300px;
     }
 
+    @include respond(mobile-m) {
+      width: 220px;
+    }
+
     &__field {
       padding: 9px 18px;
       @include respond(tab-land) {
