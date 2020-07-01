@@ -31,8 +31,21 @@
     @include respond(laptop) {
       height: 40px;
     }
-    @include respond(mobile-m) {
-      height: 35px;
+    @include respond(mobile-lg) {
+      display: none;
+    }
+  }
+
+
+
+  &__brand-small {
+    display: none;
+    img {
+      height: 100%;
+    }
+    @include respond(mobile-lg) {
+      display: flex;
+      height: 45px;
     }
   }
 }

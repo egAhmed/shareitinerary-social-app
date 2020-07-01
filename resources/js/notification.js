@@ -54,7 +54,7 @@ class Attach {
     this.content.setAttribute(
       "style",
       `visibility: ${this.show ? "visible" : "hidden"} !important; opacity: ${
-        this.show ? 1 : 0
+      this.show ? 1 : 0
       } !important; top: ${Math.floor(
         holderBound.y + holderBound.height
       )}px !important; left: ${Math.floor(

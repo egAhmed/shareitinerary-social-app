@@ -4,9 +4,12 @@
     display: flex;
     width: 100%;
     overflow: hidden;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-bottom: 5px;
+    padding: 10px 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    li {
+      padding: 5px 0;
+    }
     li:not(:last-child) {
       display: block;
       margin-right: 20px;
@@ -18,4 +21,27 @@
       margin-bottom: 20px;
     }
   }
+}
+@mixin owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff !important;
+  height: 30px;
+  width: 30px;
+  outline: none;
+  border-radius: 100%;
+  @include box-shadow;  
+  color: $primary-color !important;
+  font-size: 20px !important;
+}
+
+.owl-next {
+  @include owl-nav();
+  right: 0;
+}
+
+.owl-prev {
+  @include owl-nav();
+  left: 0;
 }
