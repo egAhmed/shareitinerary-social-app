@@ -35,7 +35,7 @@
     border-radius: 10px;
     border: 1px solid rgba($secondary-color-text, 0.08);
 
-    @include respond(mobile-m) {
+    @include respond(mobile-lg) {
       .card--feed__place {
         display: none;
       }
